@@ -27,6 +27,8 @@ In Case the upper commands takes soo long to build then use these commands, Thes
 wget https://github.com/ggml-org/llama.cpp/archive/refs/heads/master.zip
 mkdir llama.cpp
 unzip master.zip -d llama.cpp
+mv llama.cpp/llama.cpp-master/* llama.cpp
+rm -rf llama.cpp/llama.cpp-master
 cd llama.cpp
 cmake . -DLLAMA_CURL=OFF
 make -j`nproc`
