@@ -25,8 +25,9 @@ In Case the upper commands takes soo long to build then use these commands, Thes
 
 ```bash
 wget https://github.com/ggml-org/llama.cpp/archive/refs/heads/master.zip
-unzip master.zip
-cd master.zip
+mkdir llama.cpp
+unzip master.zip -d llama.cpp
+cd llama.cpp
 cmake . -DLLAMA_CURL=OFF
 make -j`nproc`
 cd bin
