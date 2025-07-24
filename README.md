@@ -20,3 +20,17 @@ ls
 ```
 
 These commands needs you to have `git`, `nproc`, `cmake` and `make` already installed on a `busybox` based linux distro. Once builded they you should see the list of all the builded files on your CLI, Othervise there is some problem while building.
+
+In Case the upper commands takes soo long to build then use these commands, These are very fast but you will need `unzip` and `wget` already installed on your system.
+
+```bash
+wget https://github.com/ggml-org/llama.cpp/archive/refs/heads/master.zip
+unzip master.zip
+cd master.zip
+cmake . -DLLAMA_CURL=OFF
+make -j`nproc`
+cd bin
+ls
+```
+
+Here you don't need `git` because we used the `github` download API to download the repository's master branch only. This drastically reduces the download time but only if you have all the dependencies already installed , If you have any issues with both build options then use this repository's pre-built binaries to avoid the compiling step.
